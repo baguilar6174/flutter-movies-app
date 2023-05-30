@@ -36,12 +36,16 @@ Sirve de puente entre nuestros casos de uso (repository) y realizan los cambios 
 git clone https://github.com/baguilar6174/flutter-movies-app.git
 ```
 
-- Run `flutter pub get` in project root
-- Run `flutter run`
+1. Run `flutter pub get` in project root
+2. Copy `.env.template` after that, rename this file to `.env`
+3. Complete the environment variables
+  - This project uses TheMovieDB API, you can read the [documentation to create an API Key](https://developer.themoviedb.org/docs/getting-started)
+4. Run `flutter run`
 
 ## Packages used
 
 * `go_router: ^6.0.5` Routes management
+* `flutter_dotenv: ^5.0.2` Use environment variables
 
 ## What I learned
 
