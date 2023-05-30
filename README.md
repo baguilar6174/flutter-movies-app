@@ -67,10 +67,7 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
   <tbody>
     <tr>
       <td align="center" valign="center">
-        <figure>
-          <img src="./media/1.png" alt="Initial" width="50%">
-          <figcaption>Fetch and retrieve data</figcaption>
-        </figure>
+        <img src="./media/1.png" alt="Initial" width="50%">
       </td>
     </tr>
   </tbody>
