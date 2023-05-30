@@ -46,6 +46,7 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
 
 * `go_router: ^6.0.5` Routes management
 * `flutter_dotenv: ^5.0.2` Use environment variables
+* `dio: ^5.1.2` HTTP Client
 
 ## What I learned
 
