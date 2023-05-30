@@ -47,6 +47,7 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
 * `go_router: ^6.0.5` Routes management
 * `flutter_dotenv: ^5.0.2` Use environment variables
 * `dio: ^5.1.2` HTTP Client
+* `flutter_riverpod: ^2.3.6` State manager
 
 ## What I learned
 
@@ -59,6 +60,21 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
   - StateNotifierProvider
   - Notifiers
 - Mappers
+
+## Movies applicacion
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="center">
+        <figure>
+          <img src="./media/1.png" alt="Initial" width="50%">
+          <figcaption>Fetch and retrieve data</figcaption>
+        </figure>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Autor
 

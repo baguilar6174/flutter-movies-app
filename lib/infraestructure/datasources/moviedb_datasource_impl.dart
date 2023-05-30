@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 import 'package:flutter_movies_app/config/config.dart';
 import 'package:flutter_movies_app/domain/domain.dart';
-import 'package:flutter_movies_app/infrastructure/infraestructure.dart';
+import 'package:flutter_movies_app/infraestructure/infraestructure.dart';
 
 class MovieDBDatasourceImpl extends MovieDatasource {
   final dio = Dio(

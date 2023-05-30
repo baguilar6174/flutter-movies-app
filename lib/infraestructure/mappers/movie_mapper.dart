@@ -1,5 +1,5 @@
 import 'package:flutter_movies_app/domain/domain.dart';
-import 'package:flutter_movies_app/infrastructure/infraestructure.dart';
+import 'package:flutter_movies_app/infraestructure/infraestructure.dart';
 
 class MovieMapper {
   static Movie movieDBToEntity(MovieFromMovieDB movieFromMovieDB) => Movie(
