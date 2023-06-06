@@ -21,23 +21,14 @@ class HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final movies = ref.watch(nowPlayingMoviesProvider);
+    // final movies = ref.watch(nowPlayingMoviesProvider);
+    final moviesSlideshow = ref.watch(moviesSlideshowProvider);
 
     return Scaffold(
       body: Column(
         children: [
           const CustomAppbar(),
-          Expanded(
-            child: ListView.builder(
-              itemCount: movies.length,
-              itemBuilder: (context, index) {
-                final movie = movies[index];
-                return ListTile(
-                  title: Text(movie.title),
-                );
-              },
-            ),
-          )
+          Slideshow(movies: moviesSlideshow),
         ],
       ),
     );

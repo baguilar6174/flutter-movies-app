@@ -48,6 +48,7 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
 * `flutter_dotenv: ^5.0.2` Use environment variables
 * `dio: ^5.1.2` HTTP Client
 * `flutter_riverpod: ^2.3.6` State manager
+* `card_swiper: ^2.0.4` Carrusel
 
 ## What I learned
 
@@ -67,7 +68,10 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
   <tbody>
     <tr>
       <td align="center" valign="center">
-        <img src="./media/1.png" alt="Initial" width="50%">
+        <img src="./media/1.png" alt="Initial" width="100%">
+      </td>
+      <td align="center" valign="center">
+        <img src="./media/2.png" alt="Initial" width="100%">
       </td>
     </tr>
   </tbody>
