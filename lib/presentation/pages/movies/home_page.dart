@@ -31,6 +31,7 @@ class HomePageState extends ConsumerState<HomePage> {
           Slideshow(movies: moviesSlideshow),
         ],
       ),
+      bottomNavigationBar: const CustomBottomNavigation(),
     );
   }
 }
