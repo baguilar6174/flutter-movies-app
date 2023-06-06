@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:flutter_movies_app/presentation/presentation.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   static const name = 'home-screen';
@@ -24,14 +24,21 @@ class HomePageState extends ConsumerState<HomePage> {
     final movies = ref.watch(nowPlayingMoviesProvider);
 
     return Scaffold(
-      body: ListView.builder(
-        itemCount: movies.length,
-        itemBuilder: (context, index) {
-          final movie = movies[index];
-          return ListTile(
-            title: Text(movie.title),
-          );
-        },
+      body: Column(
+        children: [
+          const CustomAppbar(),
+          Expanded(
+            child: ListView.builder(
+              itemCount: movies.length,
+              itemBuilder: (context, index) {
+                final movie = movies[index];
+                return ListTile(
+                  title: Text(movie.title),
+                );
+              },
+            ),
+          )
+        ],
       ),
     );
   }
