@@ -21,14 +21,37 @@ class HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // final movies = ref.watch(nowPlayingMoviesProvider);
+    final movies = ref.watch(nowPlayingMoviesProvider);
     final moviesSlideshow = ref.watch(moviesSlideshowProvider);
 
     return Scaffold(
-      body: Column(
-        children: [
-          const CustomAppbar(),
-          Slideshow(movies: moviesSlideshow),
+      body: CustomScrollView(
+        slivers: [
+          const SliverAppBar(
+            floating: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: CustomAppbar(),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return Column(
+                  children: [
+                    Slideshow(movies: moviesSlideshow),
+                    HorizontalListview(
+                      movies: movies,
+                      title: 'Playing now',
+                      loadNextPage: () => ref
+                          .read(nowPlayingMoviesProvider.notifier)
+                          .loadNextPage(),
+                    ),
+                  ],
+                );
+              },
+              childCount: 1,
+            ),
+          )
         ],
       ),
       bottomNavigationBar: const CustomBottomNavigation(),
