@@ -3,16 +3,26 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:flutter_movies_app/presentation/presentation.dart';
 
-class HomePage extends ConsumerStatefulWidget {
+class HomePage extends StatelessWidget {
   static const name = 'home-page';
 
   const HomePage({super.key});
 
   @override
-  HomePageState createState() => HomePageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _Movies(),
+      bottomNavigationBar: const CustomBottomNavigation(),
+    );
+  }
 }
 
-class HomePageState extends ConsumerState<HomePage> {
+class _Movies extends ConsumerStatefulWidget {
+  @override
+  MoviesState createState() => MoviesState();
+}
+
+class MoviesState extends ConsumerState<_Movies> {
   @override
   void initState() {
     super.initState();
@@ -31,53 +41,47 @@ class HomePageState extends ConsumerState<HomePage> {
     final upcomingMovies = ref.watch(upcomingMoviesProvider);
     final moviesSlideshow = ref.watch(moviesSlideshowProvider);
 
-    return Scaffold(
-      body: Visibility(
-        child: CustomScrollView(
-          slivers: [
-            const SliverAppBar(
-              floating: true,
-              flexibleSpace: FlexibleSpaceBar(
-                title: CustomAppbar(),
-              ),
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  return Column(
-                    children: [
-                      Slideshow(movies: moviesSlideshow),
-                      HorizontalListview(
-                        movies: movies,
-                        title: 'Playing now',
-                        loadNextPage: () => ref
-                            .read(nowPlayingMoviesProvider.notifier)
-                            .loadNextPage(),
-                      ),
-                      HorizontalListview(
-                        movies: popularMovies,
-                        title: 'Popular',
-                        loadNextPage: () => ref
-                            .read(popularMoviesProvider.notifier)
-                            .loadNextPage(),
-                      ),
-                      HorizontalListview(
-                        movies: upcomingMovies,
-                        title: 'Popular',
-                        loadNextPage: () => ref
-                            .read(upcomingMoviesProvider.notifier)
-                            .loadNextPage(),
-                      ),
-                    ],
-                  );
-                },
-                childCount: 1,
-              ),
-            )
-          ],
+    return CustomScrollView(
+      slivers: [
+        const SliverAppBar(
+          floating: true,
+          flexibleSpace: FlexibleSpaceBar(
+            title: CustomAppbar(),
+          ),
         ),
-      ),
-      bottomNavigationBar: const CustomBottomNavigation(),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              return Column(
+                children: [
+                  Slideshow(movies: moviesSlideshow),
+                  HorizontalListview(
+                    movies: movies,
+                    title: 'Playing now',
+                    loadNextPage: () => ref
+                        .read(nowPlayingMoviesProvider.notifier)
+                        .loadNextPage(),
+                  ),
+                  HorizontalListview(
+                    movies: popularMovies,
+                    title: 'Popular',
+                    loadNextPage: () =>
+                        ref.read(popularMoviesProvider.notifier).loadNextPage(),
+                  ),
+                  HorizontalListview(
+                    movies: upcomingMovies,
+                    title: 'Popular',
+                    loadNextPage: () => ref
+                        .read(upcomingMoviesProvider.notifier)
+                        .loadNextPage(),
+                  ),
+                ],
+              );
+            },
+            childCount: 1,
+          ),
+        )
+      ],
     );
   }
 }

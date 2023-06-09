@@ -11,7 +11,7 @@ final appRouter = GoRouter(
       builder: (context, state) => const HomePage(),
       routes: [
         GoRoute(
-          path: 'movie:id',
+          path: 'movie/:id',
           name: MoviePage.name,
           builder: (context, state) {
             final movieId = state.pathParameters['id'] ?? 'no-id';
