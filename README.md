@@ -62,6 +62,7 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
   - StateNotifierProvider
   - Notifiers
 - Mappers
+- Navigation router
 
 ## Movies applicacion
 

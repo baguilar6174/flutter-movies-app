@@ -6,8 +6,19 @@ import 'package:flutter_movies_app/domain/domain.dart';
 final nowPlayingMoviesProvider =
     StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
   final fetch = ref.watch(movieRepositoryProvider);
-
   return MoviesNotifier(fetch: fetch.getNowPlaying);
+});
+
+final popularMoviesProvider =
+    StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
+  final fetch = ref.watch(movieRepositoryProvider);
+  return MoviesNotifier(fetch: fetch.getPopular);
+});
+
+final upcomingMoviesProvider =
+    StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
+  final fetch = ref.watch(movieRepositoryProvider);
+  return MoviesNotifier(fetch: fetch.getUpcoming);
 });
 
 typedef MovieCallback = Future<List<Movie>> Function({int page});
