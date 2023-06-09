@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_movies_app/presentation/presentation.dart';
 
 class HomePage extends ConsumerStatefulWidget {
-  static const name = 'home-screen';
+  static const name = 'home-page';
 
   const HomePage({super.key});
 

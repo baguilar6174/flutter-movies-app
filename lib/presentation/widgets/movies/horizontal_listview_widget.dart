@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_movies_app/config/config.dart';
 import 'package:flutter_movies_app/domain/domain.dart';
+import 'package:go_router/go_router.dart';
 
 class HorizontalListview extends StatefulWidget {
   final List<Movie> movies;
@@ -123,7 +124,10 @@ class _Slide extends StatelessWidget {
                       child: CircularProgressIndicator(strokeWidth: 2),
                     );
                   }
-                  return child;
+                  return GestureDetector(
+                    onTap: () => context.push('/movie/${movie.id}'),
+                    child: child,
+                  );
                 },
               ),
             ),
