@@ -47,4 +47,15 @@ class MovieDBDatasourceImpl extends MovieDatasource {
     });
     return _jsonToMovies(response.data);
   }
+
+  @override
+  Future<Movie> getMovie(String id) async {
+    final response = await dio.get('/movie/$id');
+    if (response.statusCode != 200) {
+      throw Exception('Movie with id $id not dound');
+    }
+    final movieDBDetails = MovieDetails.fromJson(response.data);
+    final Movie movie = MovieMapper.movieDBDetailsToEntity(movieDBDetails);
+    return movie;
+  }
 }
