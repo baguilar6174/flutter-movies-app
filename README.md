@@ -63,6 +63,15 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
   - Notifiers
 - Mappers
 - Navigation router
+- SearchDelegate
+- Debouncer
+- Streams
+- Builders
+- Navigation
+- Go_Router
+  - Redirect
+  - ShellRoute
+  - SubShellRoutes
 
 ## Movies applicacion
 
@@ -78,11 +87,16 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
       <td align="center" valign="center">
         <img src="./media/3.png" alt="Horizontal listview" width="100%">
       </td>
+    </tr>
+    <tr>
       <td align="center" valign="center">
-        <img src="./media/4.png" alt="Horizontal listview" width="100%">
+        <img src="./media/4.png" alt="Sliver appbar" width="100%">
       </td>
       <td align="center" valign="center">
-        <img src="./media/5.png" alt="Horizontal listview" width="100%">
+        <img src="./media/5.png" alt="Details page" width="100%">
+      </td>
+      <td align="center" valign="center">
+        <img src="./media/6.png" alt="Search delegate" width="100%">
       </td>
     </tr>
   </tbody>
