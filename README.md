@@ -81,6 +81,9 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
       <td align="center" valign="center">
         <img src="./media/4.png" alt="Horizontal listview" width="100%">
       </td>
+      <td align="center" valign="center">
+        <img src="./media/5.png" alt="Horizontal listview" width="100%">
+      </td>
     </tr>
   </tbody>
 </table>
