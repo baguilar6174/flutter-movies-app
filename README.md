@@ -40,7 +40,8 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
 2. Copy `.env.template` after that, rename this file to `.env`
 3. Complete the environment variables
   - This project uses TheMovieDB API, you can read the [documentation to create an API Key](https://developer.themoviedb.org/docs/getting-started)
-4. Run `flutter run`
+4. Run `flutter pub run build_runner build` to generate neccesary files
+5. Run `flutter run`
 
 ## Packages used
 
@@ -50,6 +51,11 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
 * `flutter_riverpod: ^2.3.6` State manager
 * `card_swiper: ^2.0.4` Carrusel
 * `intl: ^0.18.1` Internationalized/localized
+* `isar: ^3.1.0+1` Local database Isar
+* `isar_flutter_libs: ^3.1.0+1` Flutter binaries for the Isar Database
+* `isar_generator: ^3.1.0+1` Code generator for the Isar Database
+* `build_runner: ^2.4.5` Generating files using Dart code
+* `path_provider: ^2.0.15`  Finding commonly used locations on the filesystem
 
 ## What I learned
 
@@ -99,6 +105,11 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
       </td>
       <td align="center" valign="center">
         <img src="./media/6.png" alt="Search delegate" width="100%">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center" valign="center">
+        <img src="./media/7.png" alt="isar db" width="100%">
       </td>
     </tr>
   </tbody>

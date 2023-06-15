@@ -51,28 +51,43 @@ class MoviePageState extends ConsumerState<MoviePage> {
   }
 }
 
-class _CustomSliverAppbar extends StatelessWidget {
+// * Provider to control toggle button
+final isFavoriteProvider =
+    FutureProvider.family.autoDispose((ref, int movieId) {
+  final localStorageRepository = ref.watch(localStorageRepositoryProvider);
+  return localStorageRepository.isMovieFavorite(movieId);
+});
+
+class _CustomSliverAppbar extends ConsumerWidget {
   final Movie movie;
 
   const _CustomSliverAppbar({required this.movie});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
+    final AsyncValue<bool> isFavorite = ref.watch(isFavoriteProvider(movie.id));
 
     return SliverAppBar(
       backgroundColor: Colors.black,
       expandedHeight: size.height * 0.6,
       foregroundColor: Colors.white,
       actions: [
-        // IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border)),
         IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.favorite_rounded,
-            color: Colors.red,
-          ),
-        ),
+            onPressed: () {
+              ref.watch(localStorageRepositoryProvider).toggleFavorite(movie);
+              ref.invalidate(isFavoriteProvider(movie.id));
+            },
+            icon: isFavorite.when(
+              loading: () => const CircularProgressIndicator(),
+              data: (isFavorite) => isFavorite
+                  ? const Icon(
+                      Icons.favorite_rounded,
+                      color: Colors.red,
+                    )
+                  : const Icon(Icons.favorite_border),
+              error: (_, __) => throw UnimplementedError(),
+            )),
       ],
       flexibleSpace: FlexibleSpaceBar(
         titlePadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),

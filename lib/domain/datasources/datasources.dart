@@ -1,2 +1,2 @@
-export 'movie_datasource.dart';
-export 'actors_datasource.dart';
+export 'remote/remote.dart';
+export 'local/local.dart';
