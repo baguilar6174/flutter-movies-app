@@ -72,6 +72,8 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
   - Redirect
   - ShellRoute
   - SubShellRoutes
+- Local database
+- Riverpod FutureProvider
 
 ## Movies applicacion
 
