@@ -56,6 +56,7 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
 * `isar_generator: ^3.1.0+1` Code generator for the Isar Database
 * `build_runner: ^2.4.5` Generating files using Dart code
 * `path_provider: ^2.0.15`  Finding commonly used locations on the filesystem
+* `flutter_staggered_grid_view: ^0.6.2` Provides a collection of Flutter grids layouts
 
 ## What I learned
 
@@ -108,8 +109,11 @@ git clone https://github.com/baguilar6174/flutter-movies-app.git
       </td>
     </tr>
     <tr>
-      <td colspan="3" align="center" valign="center">
+      <td colspan="2" align="center" valign="center">
         <img src="./media/7.png" alt="isar db" width="100%">
+      </td>
+      <td align="center" valign="center">
+        <img src="./media/8.png" alt="isar db" width="50%">
       </td>
     </tr>
   </tbody>
